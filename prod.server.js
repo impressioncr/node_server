@@ -8,7 +8,7 @@ app.use('/api', proxy({
   changeOrigin: true
 }));
 
-app.use(express.static('./dist'));
+app.use(express.static('./web'));
 
 module.exports = app.listen(8088, function (err) {
   if (err) {
