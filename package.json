@@ -1,0 +1,17 @@
+{
+  "name": "ias",
+  "version": "1.0.0",
+  "description": "",
+  "main": "prod.server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fstart": "forever start prod.server.js",
+    "start": "node prod.server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.5",
+    "http-proxy-middleware": "^0.17.4"
+  }
+}
