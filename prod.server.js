@@ -5,7 +5,8 @@ var app = express();
 
 app.use('/api', proxy({
   target: 'http://222.45.42.120:60119',
-  changeOrigin: true
+  changeOrigin: true,
+  pathRewrite: {'^/api' : ''}
 }));
 
 app.use(express.static('./web'));

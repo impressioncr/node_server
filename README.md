@@ -4,7 +4,7 @@
 
 ```txt
 .
-├── deeplan                                 // 项目静态文件 通过源代码npm run build生成
+├── web                                     // 项目静态文件 通过源代码npm run build生成
 │    └── static                             // 项目资源
 │    └── index.html                         // 入口html
 ├── package.json                            // npm依赖包                
