@@ -20,21 +20,21 @@ var proxy = require('http-proxy-middleware');
 var app = express();
 
 // 后台接口
-app.use('/deeplan', proxy({
+app.use('/api', proxy({
   target: 'http://192.168.10.248:80',
   changeOrigin: true
 }));
 
 // 服务器根目录
-app.use(express.static('./deeplan'));
+app.use(express.static('./web'));
 
 // 启动node服务器
-module.exports = app.listen(8081, function (err) {
+module.exports = app.listen(8088, function (err) {
   if (err) {
     console.log(err);
     return
   }
-  console.log('Listening at http://localhost:' + 8081 + '\n')
+  console.log('Listening at http://localhost:' + 8088 + '\n')
 });
 ```
 
