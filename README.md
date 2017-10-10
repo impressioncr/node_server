@@ -22,7 +22,8 @@ var app = express();
 // 后台接口
 app.use('/api', proxy({
   target: 'http://192.168.10.248:80',
-  changeOrigin: true
+  changeOrigin: true,
+  pathRewrite: {'^/api' : ''}
 }));
 
 // 服务器根目录
