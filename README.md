@@ -44,14 +44,8 @@ module.exports = app.listen(8081, function (err) {
 // 全局安装forever
 npm i forever -g
 
-// 生成package.json文件
-npm init 
-
-// 安装express
-npm i express -S
-
-// 安装hpm
-npm i http-proxy-middleware -S
+// 安装package.json里的依赖
+npm i
 
 // 启动服务器
 forever start prod.server.js
