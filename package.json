@@ -4,14 +4,16 @@
   "description": "",
   "main": "prod.server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "fstart": "forever start prod.server.js",
+    "prod": "cross-env NODE_PORT=8080 pm2 start prod.server.js",
+    "stop": "pm2 stop prod.server.js",
     "start": "node prod.server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cross-env": "^5.2.0",
     "express": "^4.15.5",
-    "http-proxy-middleware": "^0.17.4"
+    "http-proxy-middleware": "^0.17.4",
+    "pm2": "^3.1.3"
   }
 }

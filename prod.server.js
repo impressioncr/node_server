@@ -1,20 +1,22 @@
-var express = require('express');
-var proxy = require('http-proxy-middleware');
+const express = require('express');
+const proxy = require('http-proxy-middleware');
+const config = require('./prod.config')
+const PORT = process.env.NODE_PORT || 8080
+const app = express()
 
-var app = express();
-
-app.use('/api', proxy({
-  target: 'http://222.45.42.120:60119',
-  changeOrigin: true,
-  pathRewrite: {'^/api' : ''}
-}));
+if (config.proxy.length) {
+  config.proxy.forEach(proxyConfig => {
+    const { url, ...proxyTable } = proxyConfig
+    app.use(url, proxy(proxyTable))
+  })
+}
 
 app.use(express.static('./web'));
 
-module.exports = app.listen(8088, function (err) {
+module.exports = app.listen(PORT, function (err) {
   if (err) {
-    console.log(err);
+    console.log(err)
     return
   }
-  console.log('Listening at http://localhost:' + 8088 + '\n')
+  console.log('Listening at http://localhost:' + PORT + '\n')
 });
