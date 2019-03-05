@@ -4,8 +4,8 @@
   "description": "",
   "main": "prod.server.js",
   "scripts": {
-    "prod": "cross-env NODE_PORT=8080 pm2 start prod.server.js",
-    "stop": "pm2 stop prod.server.js",
+    "prod": "pm2 start ecosystem.config.js",
+    "stop": "pm2 stop ecosystem.config.js",
     "start": "node prod.server.js"
   },
   "author": "",
